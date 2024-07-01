@@ -1,0 +1,379 @@
+/* 
+* {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin: 20px 0;
+}
+
+.input_holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+input,
+button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+input {
+  width: 70%;
+}
+
+button {
+  background-color: #5cb85c;
+  color: #fff;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+.list {
+  margin-top: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.toDo {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+
+.toDo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.toDo:nth-child(odd)::before {
+  background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+}
+
+.toDo:nth-child(even)::before {
+  background: linear-gradient(45deg, #a6c0fe, #f68084);
+}
+
+.toDo:nth-child(3)::before {
+  background: linear-gradient(45deg, #81fbb8, #28c76f);
+}
+
+.toDo:nth-child(4)::before {
+  background: linear-gradient(45deg, #8ac5ff, #2980b9);
+}
+
+.toDo:nth-child(5)::before {
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+}
+
+.toDo:nth-child(6)::before {
+  background: linear-gradient(45deg, #fec163, #de4313);
+}
+
+.toDo:nth-child(7)::before {
+  background: linear-gradient(45deg, #fdeff9, #b7ff5e);
+}
+
+.toDo:nth-child(8)::before {
+  background: linear-gradient(45deg, #a8edea, #fed6e3);
+}
+
+.toDo:nth-child(9)::before {
+  background: linear-gradient(45deg, #c4e17f, #4ca2cd);
+}
+
+.toDo:nth-child(10)::before {
+  background: linear-gradient(45deg, #9be15d, #00e3ae);
+}
+
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.icon:hover {
+  color: #d9534f;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #0000006c;
+  display: grid;
+  place-items: center;
+}
+
+.popup {
+  position: relative;
+  background-color: #fff;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.cross:hover {
+  color: #888;
+}
+
+.popup h1 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.popup__input_holder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup__input_holder input,
+.popup__input_holder button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.popup__input_holder input {
+  background-color: #f2f2f2;
+}
+
+.popup__input_holder input::placeholder {
+  color: #888;
+}
+
+.popup__input_holder button {
+  background-color: #5cb85c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.popup__input_holder button:hover {
+  background-color: #4cae4c;
+} 
+
+
+     */
+
+     * {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    
+    .container {
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    .subheading {
+      text-align: center;
+      font-size: 2rem;
+      color: #5cb85c;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .subheading {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    }
+    
+    
+    .title {
+      text-align: center;
+      font-size: 3rem;
+      margin: 20px 0;
+    }
+    
+    .input_holder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    input,
+    button {
+      padding: 10px;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+    }
+    
+    input {
+      width: 70%;
+    }
+    
+    button {
+      background-color: #5cb85c;
+      /* background-color:#3498db;; */
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    input::placeholder {
+      color:#5cb85c ;
+    }
+    
+    button:hover {
+      /* background-color: #4cae4c; */
+      background-color: #333;
+    }
+    
+    .list {
+      margin-top: 20px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .toDo {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #333; 
+    }
+    
+    .icons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    
+    .icon:hover {
+      color:#5cb85c;
+    }
+    
+    .backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #0000006c;
+      display: grid;
+      place-items: center;
+    }
+    
+    .popup {
+      position: relative;
+      background-color: #fff;
+      width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 8, 2, 0.2);
+    }
+    
+    .cross {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+    
+    .cross:hover {
+      color: #5cb85c;
+    }
+    
+    .popup h1 {
+      text-align: center;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    
+    .popup__input_holder {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .popup__input_holder input,
+    .popup__input_holder button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    
+    .popup__input_holder input {
+      background-color: #f2f2f2;
+    }
+    
+    .popup__input_holder input::placeholder {
+      color: #5cb85c;
+    }
+    
+    .popup__input_holder button {
+      background-color: #5cb85c;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    .popup__input_holder button:hover {
+      background-color: #4cae4c;
+    }
+    
